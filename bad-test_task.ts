@@ -10,7 +10,7 @@ To run the code, do the following:
 import * as readline from "node:readline/promises";
 import { stdin, stdout } from "node:process";
 
-async function getFirstUnique(input: string): Promise<string> {
+function getFirstUnique(input: string): string {
     const splitted = input.split(" ");
     const uniqueCharsInText: string[] = [];
 
@@ -37,7 +37,7 @@ async function main() {
     const rl = readline.createInterface({ input: stdin, output: stdout });
 
     const input = await rl.question("");
-    const firstUnique = await getFirstUnique(input);
+    const firstUnique = getFirstUnique(input);
     console.log(firstUnique);
 
     rl.close();
